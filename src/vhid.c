@@ -4,7 +4,8 @@
 #include <string.h>
 
 #if defined(linux) || defined(__linux) || defined(__linux__) || defined(__GNU__) || defined(__GLIBC__)
-
+//gcc flags
+//-lusb
 #include <usb.h>
 
 #define USB_HID_REPORT_TYPE_FEATURE 3
@@ -96,7 +97,8 @@ char HidReceiveArr(hiddevice_t dev, void *buf, size_t size){
 }
 
 #elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
-
+//mingw flags
+//-lsetupapi -lhid
 #include <windows.h>
 #include <wchar.h>
 #include <setupapi.h>
